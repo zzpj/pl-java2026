@@ -52,7 +52,7 @@
 - Integracja z modelami AI przez http + biblioteki do AI w Javie
 - Statyczna analiza kodu
 - Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA
-- Spring 102: Security (Keycloak + Spring Authorization Server)
+- Spring 102: Security
 - Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka
 - Mikroserwisy 102: zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją
   użytkowników i serwisów (Keycloak vs Spring Authorization Server)
