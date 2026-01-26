@@ -37,7 +37,7 @@
         - [ ] Statyczna analiza kodu – lokalne postawienie SonarQube, utworzenie projektu, dodanie skanera, analiza
           wyników, dbanie o utrzymanie długu technicznego na akceptowalnym poziomie
         - [ ] Aplikacja wykorzystująca ostatnie nowości w **JDK** (np. Local-Variable Type Inference, Text Blocks,
-          Sealed Classes, Pattern Matching dla instanceof, Virtual Threads, Records, Structured Concurrency)
+          Sealed Classes, Pattern Matching dla instanceof, Virtual Threads, Records)
         - [ ] Obsługa **LLM / AI w Javie** – skorzystanie z API do zadania przetwarzania tekstu lub np.
           predykcja/klasyfikacja własnym modelem
     - UI oraz UX nie mają znaczenia, podczas prezentacji można użyć narzędzi typu Swagger albo Postman
