@@ -59,4 +59,25 @@
 - Mutation testing (pitest)
 - From Java to Go(lang)
 - Kafka
+- (lista nie jest kompletna, proszę dopisać swoje propozycje)
+
+## Ramowy plan zajęć
+
+ Lp | Temat                                                                                                                                  | Data  | Prowadzący | Uwagi                                                                                
+----|----------------------------------------------------------------------------------------------------------------------------------------|-------|------------|--------------------------------------------------------------------------------------
+ 1  | Wprowadzenie + IntelliJ                                                                                                                |       |            | [Materiały na zajęcia](https://github.com/zzpj/pl-java2025/tree/main/intro-intellij) 
+ 2  | JDK Updates (od wersji 9 do wersji 25)                                                                                                 |       |            | [Materiały na zajecia](amber%2FREADME.md)                                            
+ 3  | Cucumber (BDD) + AssertJ                                                                                                               |       |            |
+ 4  | Przedstawienie pomysłu na projekt                                                                                                      |       |            |
+ 5  | Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA                                                               |       |            |
+ 6  | Testy Mutacyjne                                                                                                                        |       |            |
+ 7  | Logi + Observability (JMX+Spring Atuators/Endpoints)                                                                                   |       |            |
+ 8  | Spring AOP                                                                                                                             |       |            |
+ 9  | LLM                                                                                                                                    |       |            |
+ 10 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka                                       |       |            | H
+ 11 | Sprawdzanie postępu realizacji projektu                                                                                                |       |            |
+ 12 | Mikroserwisy 102 (+ Spring Security): zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją |       |            |
+ 13 | From Java to Go                                                                                                                        |       |            | [Materiały na zajęcia](java-to-go%2FREADME.MD)
+ 14 | TBD                                                                                                                                    |       |            |
+ 15 | Finalne przedstawienie zrealizowanego projektu                                                                                         |       |            |
 
