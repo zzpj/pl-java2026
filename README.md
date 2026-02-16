@@ -65,7 +65,7 @@
 
  Lp | Temat                                                                                                                                  | Data | Prowadzący | Uwagi 
 ----|----------------------------------------------------------------------------------------------------------------------------------------|------|------------|-------
- 1  | Wprowadzenie + IntelliJ                                                                                                                |      |            |
+ 1  | Wprowadzenie + IntelliJ                                                                                                                |      | MD         |
  2  | JDK Updates (od wersji 9 do wersji 25)                                                                                                 |      | ZN         |
  3  | Cucumber (BDD) + AssertJ                                                                                                               |      | ŁCh        |
  4  | Przedstawienie pomysłu na projekt                                                                                                      |      |            |
