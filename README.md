@@ -70,14 +70,14 @@
  3  | Cucumber (BDD) + AssertJ                                                                                                               |       |            |
  4  | Przedstawienie pomysłu na projekt                                                                                                      |       |            |
  5  | Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA                                                               |       |            |
- 6  | Testy Mutacyjne                                                                                                                        |       |            |
+ 6  | Testy Mutacyjne                                                                                                                        |       |     MD     |
  7  | Logi + Observability (JMX+Spring Atuators/Endpoints)                                                                                   |       |            |
  8  | Spring AOP                                                                                                                             |       |            |
  9  | LLM                                                                                                                                    |       |            |
  10 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka                                       |       |            |
  11 | Sprawdzanie postępu realizacji projektu                                                                                                |       |            |
  12 | Mikroserwisy 102 (+ Spring Security): zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją |       |            |
- 13 | From Java to Go                                                                                                                        |       |            |
+ 13 | From Java to Go                                                                                                                        |       |     MD     |
  14 | TBD                                                                                                                                    |       |            |
  15 | Finalne przedstawienie zrealizowanego projektu                                                                                         |       |            |
 
