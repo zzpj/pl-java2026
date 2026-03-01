@@ -43,41 +43,35 @@
     - UI oraz UX nie mają znaczenia, podczas prezentacji można użyć narzędzi typu Swagger albo Postman
     - Unikanie typowych aplikacji Create-Read-Update-Delete (CRUD)
 
-## Propozycje tematów 2026
+## Realizowane zagadnienia w edycji 2026
 
-- IntelliJ
-- JDK Updates (9~25)
-- Refleksja w Javie
-- Cucumber (BDD) + AssertJ
-- Integracja z modelami AI przez http + biblioteki do AI w Javie
-- Statyczna analiza kodu
-- Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA
-- Spring 102: Security
-- Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka
-- Mikroserwisy 102: zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją
-  użytkowników i serwisów (Keycloak vs Spring Authorization Server)
-- Mutation testing (pitest)
-- From Java to Go(lang)
-- Kafka
-- (lista nie jest kompletna, proszę dopisać swoje propozycje)
+| Prowadzący | Temat                                                                                                                                                                                                                                                                                  |
+|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ŁCh        | - Cucumber (BDD) + AssertJ<br>- Spring: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA<br>- LLM                                                                                                                                                                          |
+| MD         | - Wprowadzenie + IntelliJ<br>- Testy Mutacyjne<br>- From Java to Go                                                                                                                                                                                                                    |
+| MK         | - Logi + Observability (JMX+Spring Atuators/Endpoints)<br>- Spring AOP<br>- Refleksja, Classloader, Annotation Processing                                                                                                                                                              |
+| ZN         | - JDK Updates (od wersji 9 do wersji 25)<br>- Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka<br>- Mikroserwisy 102 (+ Spring Security): zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją |
 
 ## Ramowy plan zajęć
 
- Lp | Temat                                                                                                                                  | Data | Prowadzący | Uwagi 
-----|----------------------------------------------------------------------------------------------------------------------------------------|------|------------|-------
- 1  | Wprowadzenie + IntelliJ                                                                                                                |      | MD         |
- 2  | JDK Updates (od wersji 9 do wersji 25)                                                                                                 |      | ZN         |
- 3  | Cucumber (BDD) + AssertJ                                                                                                               |      | ŁCh        |
- 4  | Przedstawienie pomysłu na projekt                                                                                                      |      |            |
- 5  | Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA                                                               |      | ŁCh        |
- 6  | Testy Mutacyjne                                                                                                                        |      | MD         |
- 7  | Logi + Observability (JMX+Spring Atuators/Endpoints)                                                                                   |      | MK         |
- 8  | Spring AOP                                                                                                                             |      | MK         |
- 9  | LLM                                                                                                                                    |      | ŁCh        |
- 10 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka                                       |      | ZN         |
- 11 | Sprawdzanie postępu realizacji projektu                                                                                                |      |            |
- 12 | Mikroserwisy 102 (+ Spring Security): zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją |      | ZN         |
- 13 | From Java to Go                                                                                                                        |      | MD         |
- 14 | Refleksja, Classloader, Annotation Processing                                                                                          |      | MK         |
- 15 | Finalne przedstawienie zrealizowanego projektu                                                                                         |      |            |
+| Lp | Data  | Temat | Uwagi |
+|----|-------|-------|-------|
+| 1  | 2.03  | Wprowadzenie + IntelliJ                        |       |
+| 2  | 9.03  |                                                |       |
+| 3  | 16.03 |                                                |       |
+| 4  | 23.03 | Przedstawienie pomysłu na projekt              |       |
+| 5  | 30.03 |                                                |       |
+| 6  | 13.04 |                                                |       |
+| 7  | 20.04 |                                                |       |
+| 8  | 4.05  |                                                |       |
+| 9  | 11.05 |                                                |       |
+| 10 | 18.05 |                                                |       |
+| 11 | 25.05 | Sprawdzanie postępu realizacji projektu        |       |
+| 12 | 1.06  |                                                |       |
+| 13 | 8.06  |                                                |       |
+| 14 | 15.06 |                                                |       |
+| 15 | 22.06 | Finalne przedstawienie zrealizowanego projektu |       |
 
+## Ankiety
+- [Ankieta Wejściowa: Oczekiwania](https://forms.gle/9Zt3n2h7mL8sHj5i6) - wypełnij teraz, abyśmy mogli lepiej dostosować zajęcia do Twoich potrzeb i oczekiwań!
+- [Ankieta Wyjściowa: Ocena zajęć i wnioski](https://forms.gle/9Zt3n)
