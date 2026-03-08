@@ -1,0 +1,1173 @@
+<html>
+  <head>
+    <title>Indexing diagnostics of 'untitled'</title>
+    <style>body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 80%;
+}
+
+table.activity-table {
+  width: 100%;
+}
+
+table.metrics-table {
+  width: auto;
+}
+
+.red-text {
+  color: red;
+}
+
+table.narrow-activity-table {
+  width: 80%;
+}
+
+table.two-columns td {
+  width: 50%;
+}
+
+th, td {
+  padding: 3px;
+}
+
+th {
+  background: lightgrey;
+}
+
+td {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.stats-content {
+  margin-left: 20%;
+}
+
+.stats-activity-content {
+  margin-left: 20%;
+  margin-right: 5%;
+}
+
+.aggregate-report-content {
+  margin-left: 10%;
+}
+
+.aggregate-activity-report-content {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.aggregate-header {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 0;
+}
+
+.table-with-margin{
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.navigation-bar {
+  width: 15%;
+  background-color: lightgrey;
+  position: fixed;
+  height: 100%;
+}
+
+div.navigation-bar ul {
+  list-style-type: none;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+div.navigation-bar ul li a, label {
+  display: block;
+  color: #000;
+  padding: 8px 20px;
+  text-decoration: none;
+}
+
+label input {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+div.navigation-bar ul li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.minor-data {}
+
+.invisible {
+  display: none;
+}
+
+.jetbrains-logo {
+  width: 50%;
+  bottom: 5%;
+  position: absolute;
+  left: 20%;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.linkable-table-row:hover {
+  background: #f2f3ff;
+  outline: none;
+  cursor: pointer;
+}
+
+.scanning-table-row {
+  background-color: aliceblue;
+}
+
+.not-applicable-data{
+  color: darkgrey;
+}</style>
+    <script>document.addEventListener("DOMContentLoaded", () => {
+  const rows = document.getElementsByClassName("linkable-table-row")
+  for (const row of rows) {
+    const href = row.getAttribute("href")
+    row.addEventListener("click", () => {
+      window.open(href, "_blank");
+    });
+  }
+});</script>
+  </head>
+  <body>
+    <div class="aggregate-activity-report-content">
+      <h1 class="aggregate-header">untitled</h1>
+      <div>All durations are wall time; total and content loading time include pauses
+        <table class="centered-text table-with-margin activity-table"><caption style="caption-side: bottom; text-align: right; font-size: 14px">Click for details</caption>
+          <thead>
+            <tr>
+              <th colspan="14">History of scannings and indexings</th>
+            </tr>
+            <tr>
+              <th colspan="7">Time</th>
+              <th colspan="5">Files</th>
+              <th rowspan="2">Scanning ID(s)</th>
+              <th rowspan="2">Scanning Type</th>
+            </tr>
+            <tr>
+              <th>Started</th>
+              <th>Started dumb mode</th>
+              <th>Finished</th>
+              <th>Total&nbsp;time</th>
+              <th>Time spent on pause</th>
+              <th>Full dumb mode time</th>
+              <th>Dumb mode time w/o pauses</th>
+              <th>Scanned</th>
+              <th>Shared indexes (w/o content loading)</th>
+              <th>Scheduled for indexing</th>
+              <th>Shared indexes (content loaded)</th>
+              <th>Total indexed (shared indexes included)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-20-27-20.227.html">
+              <td>20:27:09 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>20:27:20 08 Mar</td>
+              <td>10 s 665 ms</td>
+              <td>13 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-17-04-49.301.html">
+              <td>17:04:44 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>17:04:49 08 Mar</td>
+              <td>5 s 10 ms</td>
+              <td>6 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-17-03-03.112.html">
+              <td>17:02:57 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>17:03:03 08 Mar</td>
+              <td>5 s 809 ms</td>
+              <td>20 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-58-42.425.html">
+              <td>16:58:32 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:58:42 08 Mar</td>
+              <td>10 s 74 ms</td>
+              <td>7 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-56-51.606.html">
+              <td>16:56:41 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:56:51 08 Mar</td>
+              <td>9 s 645 ms</td>
+              <td>5 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-55-48.074.html">
+              <td>16:55:38 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:55:48 08 Mar</td>
+              <td>9 s 497 ms</td>
+              <td>3 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-54-35.241.html">
+              <td>16:54:23 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:54:35 08 Mar</td>
+              <td>11 s 667 ms</td>
+              <td>6 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-52-24.545.html">
+              <td>16:52:14 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:52:24 08 Mar</td>
+              <td>9 s 863 ms</td>
+              <td>6 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-50-57.489.html">
+              <td>16:50:53 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:50:57 08 Mar</td>
+              <td>4 s 443 ms</td>
+              <td>6 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-49-50.417.html">
+              <td>16:49:32 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:49:50 08 Mar</td>
+              <td>17 s 462 ms</td>
+              <td>5 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-37-54.239.html">
+              <td>16:37:44 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:37:54 08 Mar</td>
+              <td>9 s 234 ms</td>
+              <td>6 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2026-03-08-16-32-04.973.html">
+              <td>16:31:54 08 Mar</td>
+              <td>16:31:54 08 Mar</td>
+              <td>16:32:04 08 Mar</td>
+              <td>10 s 124 ms</td>
+              <td>0</td>
+              <td>10 s 124 ms</td>
+              <td>10 s 124 ms</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>8936</td>
+              <td>14951</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-31-54.776.html">
+              <td>16:31:45 08 Mar</td>
+              <td>16:31:45 08 Mar</td>
+              <td>16:31:54 08 Mar</td>
+              <td>9 s 426 ms</td>
+              <td>6 ms</td>
+              <td>9 s 195 ms</td>
+              <td>9 s 195 ms</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>14951</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-13-46.771.html">
+              <td>16:13:36 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:13:46 08 Mar</td>
+              <td>9 s 996 ms</td>
+              <td>4 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-03-38.130.html">
+              <td>16:03:32 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:03:38 08 Mar</td>
+              <td>5 s 486 ms</td>
+              <td>4 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-16-01-48.855.html">
+              <td>16:01:37 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>16:01:48 08 Mar</td>
+              <td>11 s 198 ms</td>
+              <td>5 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-15-56-59.460.html">
+              <td>15:56:36 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>15:56:59 08 Mar</td>
+              <td>22 s 449 ms</td>
+              <td>8 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2026-03-08-15-54-05.146.html">
+              <td>15:53:59 08 Mar</td>
+              <td>15:53:59 08 Mar</td>
+              <td>15:54:05 08 Mar</td>
+              <td>5 s 658 ms</td>
+              <td>0</td>
+              <td>5 s 658 ms</td>
+              <td>5 s 658 ms</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>8936</td>
+              <td>8936</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-15-53-59.371.html">
+              <td>15:53:50 08 Mar</td>
+              <td>15:53:50 08 Mar</td>
+              <td>15:53:59 08 Mar</td>
+              <td>8 s 821 ms</td>
+              <td>3 ms</td>
+              <td>8 s 440 ms</td>
+              <td>8 s 440 ms</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>8936</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-14-05-54.145.html">
+              <td>14:05:42 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>14:05:54 08 Mar</td>
+              <td>12 s 11 ms</td>
+              <td>9 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2026-03-08-13-39-33.906.html">
+              <td>13:39:25 08 Mar</td>
+              <td>13:39:25 08 Mar</td>
+              <td>13:39:33 08 Mar</td>
+              <td>8 s 495 ms</td>
+              <td>0</td>
+              <td>8 s 495 ms</td>
+              <td>8 s 495 ms</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>8936</td>
+              <td>14951</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-13-39-25.355.html">
+              <td>13:39:13 08 Mar</td>
+              <td>13:39:18 08 Mar</td>
+              <td>13:39:25 08 Mar</td>
+              <td>11 s 678 ms</td>
+              <td>17 ms</td>
+              <td>7 s 190 ms</td>
+              <td>7 s 190 ms</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>14951</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-13-27-53.500.html">
+              <td>13:27:36 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>13:27:53 08 Mar</td>
+              <td>17 s 73 ms</td>
+              <td>9 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-13-25-43.012.html">
+              <td>13:25:31 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>13:25:43 08 Mar</td>
+              <td>11 s 342 ms</td>
+              <td>8 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-13-23-22.615.html">
+              <td>13:23:13 08 Mar</td>
+              <td class="not-applicable-data">Didn't start</td>
+              <td>13:23:22 08 Mar</td>
+              <td>9 s 548 ms</td>
+              <td>15 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2026-03-08-12-57-41.895.html">
+              <td>12:57:31 08 Mar</td>
+              <td>12:57:31 08 Mar</td>
+              <td>12:57:41 08 Mar</td>
+              <td>10 s 247 ms</td>
+              <td>0</td>
+              <td>10 s 247 ms</td>
+              <td>10 s 247 ms</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>8936</td>
+              <td>14951</td>
+              <td>0</td>
+              <td class="not-applicable-data">N/A</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-12-57-31.559.html">
+              <td>12:57:15 08 Mar</td>
+              <td>12:57:16 08 Mar</td>
+              <td>12:57:31 08 Mar</td>
+              <td>16 s 102 ms</td>
+              <td>14 ms</td>
+              <td>14 s 845 ms</td>
+              <td>14 s 845 ms</td>
+              <td>42806</td>
+              <td>0</td>
+              <td>14951</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>0</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2026-03-08-12-53-06.004.html">
+              <td>12:52:39 08 Mar</td>
+              <td>12:52:39 08 Mar</td>
+              <td>12:53:06 08 Mar</td>
+              <td>26 s 548 ms</td>
+              <td>0</td>
+              <td>26 s 548 ms</td>
+              <td>26 s 548 ms</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>9054</td>
+              <td>42398<br>(incl. 1 changed in VFS)<br>(incl. 2 with nothing to write)</td>
+              <td>1</td>
+              <td class="not-applicable-data">N/A</td>
+            </tr>
+            <tr class="linkable-table-row scanning-table-row" href="diagnostic-2026-03-08-12-52-39.418.html">
+              <td>12:52:12 08 Mar</td>
+              <td>12:52:15 08 Mar</td>
+              <td>12:52:39 08 Mar</td>
+              <td>27 s 180 ms</td>
+              <td>&lt; 1 ms</td>
+              <td>23 s 736 ms</td>
+              <td>23 s 736 ms</td>
+              <td>42802</td>
+              <td>0</td>
+              <td>42397</td>
+              <td class="not-applicable-data">N/A</td>
+              <td class="not-applicable-data">N/A</td>
+              <td>1</td>
+              <td>full on project open</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="table-with-margin activity-table metrics-table">
+          <thead>
+            <tr>
+              <th colspan="2">Metrics</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>indexingTimeWithoutPauses</td>
+              <td>1 m 1 s 73 ms</td>
+            </tr>
+            <tr>
+              <td>scanningTimeWithoutPauses</td>
+              <td>4 m 35 s 496 ms</td>
+            </tr>
+            <tr>
+              <td>pausedTimeInIndexingOrScanning</td>
+              <td>196 ms</td>
+            </tr>
+            <tr>
+              <td>dumbModeTimeWithPauses</td>
+              <td>2 m 4 s 478 ms</td>
+            </tr>
+            <tr>
+              <td>numberOfScannedFiles</td>
+              <td>1027340</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles</td>
+              <td>96187</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFilesWritingIndexValue</td>
+              <td>96185</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFilesWithNothingToWrite</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>numberOfFilesIndexedByExtensions</td>
+              <td>44798</td>
+            </tr>
+            <tr>
+              <td>numberOfFilesIndexedWithoutExtensions</td>
+              <td>51389</td>
+            </tr>
+            <tr>
+              <td>numberOfRunsOfScannning</td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td>numberOfRunsOfIndexing</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#CLASS</td>
+              <td>8304</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#JAVA</td>
+              <td>20975</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#XML</td>
+              <td>3708</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#kotlin_builtins</td>
+              <td>124</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#Properties</td>
+              <td>4759</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#Markdown</td>
+              <td>69</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#DTD</td>
+              <td>4993</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#RNG Compact</td>
+              <td>4098</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#PLAIN_TEXT</td>
+              <td>7539</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#JSON</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#Java module</td>
+              <td>6892</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#JavaScript</td>
+              <td>25711</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#XHTML</td>
+              <td>353</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#CSS</td>
+              <td>9329</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#Shell Script</td>
+              <td>2030</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#PATCH</td>
+              <td>1483</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#GitIgnore file</td>
+              <td>151</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#textmate</td>
+              <td>9938</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#SVG</td>
+              <td>2739</td>
+            </tr>
+            <tr>
+              <td>processingSpeedAvg#SPI</td>
+              <td>213</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#CLASS</td>
+              <td>1068</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#JAVA</td>
+              <td>1833</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#XML</td>
+              <td>477</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#kotlin_builtins</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#Properties</td>
+              <td>612</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#Markdown</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#DTD</td>
+              <td>642</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#RNG Compact</td>
+              <td>527</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#PLAIN_TEXT</td>
+              <td>970</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#JSON</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#Java module</td>
+              <td>886</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#JavaScript</td>
+              <td>3308</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#XHTML</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#CSS</td>
+              <td>1200</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#Shell Script</td>
+              <td>261</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#PATCH</td>
+              <td>190</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#GitIgnore file</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#textmate</td>
+              <td>1278</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#SVG</td>
+              <td>352</td>
+            </tr>
+            <tr>
+              <td>processingSpeedWorst#SPI</td>
+              <td>27</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#JAVA</td>
+              <td>20962</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#XML</td>
+              <td>4023</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#Properties</td>
+              <td>4759</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#Markdown</td>
+              <td>69</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#DTD</td>
+              <td>4993</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#RELAX-NG</td>
+              <td>4098</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#TEXT</td>
+              <td>7539</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#JSON</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#XHTML</td>
+              <td>353</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#Shell Script</td>
+              <td>2030</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#GitIgnore</td>
+              <td>151</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#IgnoreLang</td>
+              <td>151</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#textmate</td>
+              <td>9938</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#SVG</td>
+              <td>2739</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageAvg#SPI</td>
+              <td>213</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#JAVA</td>
+              <td>1833</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#XML</td>
+              <td>517</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#Properties</td>
+              <td>612</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#Markdown</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#DTD</td>
+              <td>642</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#RELAX-NG</td>
+              <td>527</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#TEXT</td>
+              <td>970</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#JSON</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#XHTML</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#Shell Script</td>
+              <td>261</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#GitIgnore</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#IgnoreLang</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#textmate</td>
+              <td>1278</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#SVG</td>
+              <td>352</td>
+            </tr>
+            <tr>
+              <td>processingSpeedOfBaseLanguageWorst#SPI</td>
+              <td>27</td>
+            </tr>
+            <tr>
+              <td>processingTime#CLASS</td>
+              <td>15 s 770 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#JAVA</td>
+              <td>43 s 515 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#XML</td>
+              <td>493 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#kotlin_builtins</td>
+              <td>412 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#Properties</td>
+              <td>200 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#Markdown</td>
+              <td>194 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#DTD</td>
+              <td>194 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#RNG Compact</td>
+              <td>116 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#PLAIN_TEXT</td>
+              <td>46 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#JSON</td>
+              <td>40 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#Java module</td>
+              <td>37 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#JavaScript</td>
+              <td>23 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#XHTML</td>
+              <td>8 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#CSS</td>
+              <td>5 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#Shell Script</td>
+              <td>3 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#PATCH</td>
+              <td>2 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#GitIgnore file</td>
+              <td>2 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#textmate</td>
+              <td>2 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#SVG</td>
+              <td>1 ms</td>
+            </tr>
+            <tr>
+              <td>processingTime#SPI</td>
+              <td>0 ms</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#CLASS</td>
+              <td>26842</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#JAVA</td>
+              <td>68741</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#XML</td>
+              <td>73</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#kotlin_builtins</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#Properties</td>
+              <td>109</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#Markdown</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#DTD</td>
+              <td>110</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#RNG Compact</td>
+              <td>124</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#PLAIN_TEXT</td>
+              <td>64</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#JSON</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#Java module</td>
+              <td>69</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#JavaScript</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#XHTML</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#CSS</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#Shell Script</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#PATCH</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#GitIgnore file</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#textmate</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#SVG</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>numberOfIndexedFiles#SPI</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="table-with-margin activity-table">
+          <thead>
+            <tr>
+              <th colspan="9">Shared indexes</th>
+            </tr>
+            <tr>
+              <th>Time</th>
+              <th>Kind</th>
+              <th>Name</th>
+              <th>Size</th>
+              <th>Download time</th>
+              <th>Download speed</th>
+              <th>Status</th>
+              <th>ID</th>
+              <th>Generation time</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

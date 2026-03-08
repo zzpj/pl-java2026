@@ -1,0 +1,25 @@
+<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <g class="layer">
+        <title>Layer 1</title>
+        <path d="m1.41,6.47l37.18,0m-22.71,10.33l22.71,0m-22.71,8.27l22.71,0m-37.18,10.33l37.18,0m-37.18,-20.65l6.2,6.2l-6.2,6.2"
+              fill="url(#paint0_linear)" id="svg_1" stroke="url(#paint0_linear)" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="3"/>
+        <path d="m34.45,38.29l-3.46,-3.46l-1.06,1.06c-1.08,1.09 -1.62,1.63 -2.21,1.5c-0.58,-0.13 -0.84,-0.85 -1.37,-2.29l-1.77,-4.79c-1.06,-2.87 -1.58,-4.3 -0.84,-5.04c0.74,-0.74 2.17,-0.21 5.04,0.84l4.79,1.77c1.43,0.53 2.15,0.79 2.29,1.37c0.12,0.59 -0.41,1.13 -1.5,2.21l-1.06,1.06l3.46,3.46c0.36,0.36 0.54,0.55 0.62,0.74c0.11,0.27 0.11,0.57 0,0.84c-0.09,0.2 -0.26,0.38 -0.62,0.74c-0.36,0.36 -0.54,0.54 -0.74,0.62c-0.26,0.11 -0.56,0.11 -0.84,0c-0.19,-0.09 -0.38,-0.26 -0.74,-0.62z"
+              fill="url(#paint1_linear)" id="svg_2" transform="matrix(1 0 0 1 0 0)"/>
+        <g id="svg_12" fill="url(#paint0_linear)">
+            <rect height="1.17" id="svg_8" width="6.92" x="28.01" y="1.75"/>
+            <rect height="11.15" id="svg_9" width="0.8" x="31.23" y="2.74"/>
+            <rect height="1.17" id="svg_10" width="6.92" x="28.01" y="13.02"/>
+        </g>
+    </g>
+    <defs>
+        <linearGradient gradientUnits="objectBoundingBox" id="paint0_linear" x1="0" x2="100%" y1="0" y2="100%">
+            <stop offset="0" stop-color="#fc466b"/>
+            <stop offset="80%" stop-color="#3f5efb"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear" x1="0" x2="100%" y1="0" y2="100%">
+            <stop offset="0" stop-color="#39b4bf"/>
+            <stop offset="40%" stop-color="#69b34a"/>
+        </linearGradient>
+    </defs>
+</svg>

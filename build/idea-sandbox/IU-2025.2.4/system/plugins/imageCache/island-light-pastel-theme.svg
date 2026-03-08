@@ -1,0 +1,31 @@
+<svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+>
+    <!-- Background soft circle -->
+    <circle
+            cx="20"
+            cy="20"
+            r="18"
+            fill="#f0e6f5"
+    />
+
+    <!-- Inner rounded square -->
+    <rect
+            x="10"
+            y="10"
+            width="20"
+            height="20"
+            rx="6"
+            fill="#ffffec"
+    />
+
+    <!-- Accent diagonal shape -->
+    <path
+            d="M14 24L24 14C25.2 12.8 27 13.2 27 15V25C27 26.1 26.1 27 25 27H15C13.2 27 12.8 25.2 14 24Z"
+            fill="#fed8de"
+    />
+</svg>

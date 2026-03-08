@@ -1,0 +1,11 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Pac-Man body -->
+    <circle cx="100" cy="100" r="90" fill="yellow" />
+
+    <!-- Pac-Man mouth -->
+    <path transform="rotate(45 100 100)"
+        d="M 100,100
+           L 190,100
+           A 80,80 0 0,0 100,10 Z" fill="brown"
+    />
+</svg>

@@ -1,0 +1,11 @@
+FsRecords.DIRECTORY_CHILDREN
+FsRecords.SYMLINK_TARGET
+template_language
+
+language_level_persistence
+AUTO_DETECTION_CACHE_ATTRIBUTE
+kotlin-is-binary-compiled
+file.content.hash.forward.multi.index
+ebaa4656
+contractInference
+BytecodeAnalysisIndex

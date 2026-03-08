@@ -1,0 +1,46 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D3748;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A202C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="terminalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2D3748;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main container with 2px padding -->
+  <rect x="2" y="2" width="36" height="36" rx="4" fill="url(#bgGradient)" stroke="#4A5568" stroke-width="0.5"/>
+  
+  <!-- Editor tab representation -->
+  <rect x="4" y="4" width="32" height="6" rx="2" fill="#E2E8F0" opacity="0.9"/>
+  <rect x="6" y="5.5" width="8" height="3" rx="1" fill="#4A5568"/>
+  <circle cx="30" cy="7" r="1.5" fill="#E53E3E" opacity="0.7"/>
+  <circle cx="33" cy="7" r="1.5" fill="#38A169" opacity="0.7"/>
+  
+  <!-- Terminal window -->
+  <rect x="4" y="12" width="32" height="24" rx="2" fill="url(#terminalGradient)" stroke="#4A5568" stroke-width="0.5"/>
+  
+  <!-- Terminal content -->
+  <rect x="6" y="15" width="2" height="2" fill="#68D391"/>
+  <rect x="9" y="15" width="12" height="2" fill="#A0AEC0" opacity="0.8"/>
+  
+  <rect x="6" y="19" width="8" height="2" fill="#F6E05E"/>
+  <rect x="15" y="19" width="6" height="2" fill="#A0AEC0" opacity="0.6"/>
+  
+  <rect x="6" y="23" width="4" height="2" fill="#63B3ED"/>
+  <rect x="11" y="23" width="16" height="2" fill="#A0AEC0" opacity="0.7"/>
+  
+  <rect x="6" y="27" width="2" height="2" fill="#68D391"/>
+  <rect x="9" y="27" width="10" height="2" fill="#A0AEC0" opacity="0.5"/>
+  
+  <!-- Cursor -->
+  <rect x="20" y="27" width="1" height="2" fill="#68D391">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Terminal prompt indicator -->
+  <text x="6" y="33" font-family="monospace" font-size="6" fill="#68D391">$</text>
+</svg>

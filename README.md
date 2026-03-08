@@ -1,88 +1,117 @@
-# PŁ: Zaawansowane Zagadnienia Programowania w Javie - Edycja 2026
+# IntelliJ Platform Plugin Template
 
-## Zaliczenie
+[![Twitter Follow](https://img.shields.io/badge/follow-%40JBPlatform-1DA1F2?logo=twitter)](https://twitter.com/JBPlatform)
+[![Developers Forum](https://img.shields.io/badge/JetBrains%20Platform-Join-blue)][jb:forum]
 
-- Projekt grupowy: od 3 do 6 osób (brak odstępstw)
-- Tematyka realizowanego projektu: dowolna
-- Elementy, które powinny znaleźć się końcowym projekcie i podlegają ocenie:
-    - Współpraca z repozytorium Git (dowolnie wybrany darmowy hosting według upodobań, na przykład: Github, Gitlab lub
-      Bitbucket)
-    - Aktywność w realizacji projektu:
-        - *pull requesty* wraz z *code review* wewnątrz zespołu
-        - *githubowy pulse* lub inne narzędzie pokazujące ciągłość pracy podczas semestru
-        - podział zadań przy implementacji funkcjonalności projektu poprzez *board projektowy* (Jira, Trello,...)
+## Plugin template structure
 
-    - Praktyczna implementacja i wdrożenie rozwiązań, tematów, narzędzi prezentowanych podczas zajęć (nie muszą być
-      wszystkie, 60-80% jest ok)
-        - [ ] Aplikacja oparta o **Spring (Boot) Framework**
-        - [ ] Integracja z zewnętrznym zasobem po **REST** z wykorzystaniem publicznego API (
-          np.: https://github.com/public-apis/public-apis) wraz z wykorzystaniem (przetworzeniem) otrzymanych danych
-        - [ ] Zaprojektowanie własnego API z wykorzystaniem biblioteki **OpenAPI** wraz z drugą aplikacją, która
-          konsumuje udostępnione API. Klient będzie wykonywał zapytania HTTP do serwisu i analizował otrzymane dane.
-        - [ ] Architektura mikroserwisowa z wykorzystaniem **Spring Cloud Eureka**, umożliwiająca rejestrację i
-          wykrywanie usług. Aplikacja będzie składała się z minimum dwóch mikroserwisów, które będą się wzajemnie
-          komunikowały przy użyciu Spring Eureka jako serwera rejestracji usług.
-        - [ ] Wykorzystanie **Spring Cloud Config Server**, który centralizuje zarządzanie konfiguracją dla wielu
-          mikroserwisów. Dzięki temu wszystkie serwisy w systemie mogą korzystać z jednej wspólnej konfiguracji,
-          przechowywanej w centralnym miejscu (np. w plikach YAML na oddzielnym repozytorium Git), a zmiany w
-          konfiguracji są natychmiastowo propagowane do aplikacji.
-        - [ ] Wykorzystanie **Keycloak** lub **Spring Authorization Server** (lub inny nieprezentowany podczas zajęć)
-          jako systemu zarządzającego autoryzacją i autentykacją użytkowników oraz/i serwisów.
-        - [ ] Aplikacja powinna być zaprojektowana w taki sposób, aby jej komponenty zostały odpowiednio przetestowane
-          przy użyciu różnych typów testów, np. **jednostkowych (unit tests)**, **integracyjnych (integration tests)**
-          oraz **testów BDD (Behavior Driven Development)**. Celem jest zapewnienie wysokiej jakości kodu, wykrywanie
-          błędów na wczesnym etapie oraz zapewnienie, że aplikacja działa zgodnie z oczekiwaniami użytkowników
-          końcowych. Użycie **Cucumber** – napisanie kilku testów z wykorzystaniem różnych konstrukcji **Gherkina** i
-          dodanie testów realizowanych przez **AssertJ**
-        - [ ] Statyczna analiza kodu – lokalne postawienie SonarQube, utworzenie projektu, dodanie skanera, analiza
-          wyników, dbanie o utrzymanie długu technicznego na akceptowalnym poziomie
-        - [ ] Aplikacja wykorzystująca ostatnie nowości w **JDK** (np. Local-Variable Type Inference, Text Blocks,
-          Sealed Classes, Pattern Matching dla instanceof, Virtual Threads, Records)
-        - [ ] Obsługa **LLM / AI w Javie** – skorzystanie z API do zadania przetwarzania tekstu lub np.
-          predykcja/klasyfikacja własnym modelem
-    - UI oraz UX nie mają znaczenia, podczas prezentacji można użyć narzędzi typu Swagger albo Postman
-    - Unikanie typowych aplikacji Create-Read-Update-Delete (CRUD)
+A generated project contains the following content structure:
 
-## Realizowane zagadnienia
+```
+.
+├── .run/                   Predefined Run/Debug Configurations
+├── build/                  Output build directory
+├── gradle
+│   ├── wrapper/            Gradle Wrapper
+├── src                     Plugin sources
+│   ├── main
+│   │   ├── kotlin/         Kotlin production sources
+│   │   └── resources/      Resources - plugin.xml, icons, messages
+├── .gitignore              Git ignoring rules
+├── build.gradle.kts        Gradle build configuration
+├── gradle.properties       Gradle configuration properties
+├── gradlew                 *nix Gradle Wrapper script
+├── gradlew.bat             Windows Gradle Wrapper script
+├── README.md               README
+└── settings.gradle.kts     Gradle project settings
+```
 
-| Prowadzący | Temat                                                                                                                                                                                                                                                                                      |
-|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ŁCh        | - Cucumber (BDD) + AssertJ<br>- Spring: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA<br>- LLM                                                                                                                                                                              |
-| MD         | - Wprowadzenie + IntelliJ<br>- Testy Mutacyjne<br>- From Java to Go                                                                                                                                                                                                                        |
-| MK         | - Logi + Observability (JMX+Spring Atuators/Endpoints)<br>- Spring AOP<br>- Refleksja, Classloader, Annotation Processing                                                                                                                                                                  |
-| ZN         | - JDK Updates (od wersji 9 do wersji 25)<br>- Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka<br>- Mikroserwisy 102 (+ Spring Security): zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją |
+In addition to the configuration files, the most crucial part is the `src` directory, which contains our implementation
+and the manifest for our plugin – [plugin.xml][file:plugin.xml].
 
-## Ramowy plan zajęć
+> [!NOTE]
+> To use Java in your plugin, create the `/src/main/java` directory.
 
-| Lp | Data  | Temat                                          | Uwagi                                                                                |
-|----|-------|------------------------------------------------|--------------------------------------------------------------------------------------|
-| 1  | 2.03  | Wprowadzenie + IntelliJ                        | [Materiały na zajęcia](https://github.com/zzpj/pl-java2026/tree/main/intro-intellij) |
-| 2  | 9.03  |                                                |                                                                                      |
-| 3  | 16.03 |                                                |                                                                                      |
-| 4  | 23.03 | Przedstawienie pomysłu na projekt              |                                                                                      |
-| 5  | 30.03 |                                                |                                                                                      |
-| 6  | 13.04 |                                                |                                                                                      |
-| 7  | 20.04 |                                                |                                                                                      |
-| 8  | 4.05  |                                                |                                                                                      |
-| 9  | 11.05 |                                                |                                                                                      |
-| 10 | 18.05 |                                                |                                                                                      |
-| 11 | 25.05 | Sprawdzanie postępu realizacji projektu        |                                                                                      |
-| 12 | 1.06  |                                                |                                                                                      |
-| 13 | 8.06  |                                                |                                                                                      |
-| 14 | 15.06 |                                                |                                                                                      |
-| 15 | 22.06 | Finalne przedstawienie zrealizowanego projektu |                                                                                      |
+## Plugin configuration file
 
-## Ankiety
+The plugin configuration file is a [plugin.xml][file:plugin.xml] file located in the `src/main/resources/META-INF`
+directory.
+It provides general information about the plugin, its dependencies, extensions, and listeners.
 
-- [Ankieta Wejściowa: Oczekiwania](https://forms.gle/3VvpUs9ntmiUmmBB7 ) - wypełnij teraz, abyśmy mogli lepiej
-  dostosować zajęcia do Twoich potrzeb i oczekiwań!
-- [Ankieta Wyjściowa: Ocena zajęć i wnioski](https://to-be-defined-abc) - wypełnij po zakończeniu zajęć, aby podzielić
-  się swoimi doświadczeniami i pomóc nam w przyszłości!
+You can read more about this file in the [Plugin Configuration File][docs:plugin.xml] section of our documentation.
 
-## Youtube
-- [Nagrania z zajęć 2026](https://to-be-defined-xyz)
-- [Nagrania z zajęć 2025](https://www.youtube.com/playlist?list=PLIPonSYREXmIEPZtRujsooBwAPBSsxROs)
-- [Nagrania z zajęć 2024](https://www.youtube.com/playlist?list=PLIPonSYREXmIQN-S_9i0mrTyAK5u0gA8t)
-- [Nagrania z zajęć 2023](https://www.youtube.com/playlist?list=PLIPonSYREXmKVCktLuj_Duve4tQNEA3p1)
-- [Nagrania z zajęć 2022](https://www.youtube.com/playlist?list=PLIPonSYREXmLkAgnHHFsoRL3bRZwOwrMi)
-- [Nagrania z zajęć 2021](https://www.youtube.com/playlist?list=PLIPonSYREXmICvsCV_osPqDlTg3MDPDPg)
+If you're still not quite sure what this is all about, read our
+introduction: [What is the IntelliJ Platform?][docs:intro]
+
+$H$H Predefined Run/Debug configurations
+
+Within the default project structure, there is a `.run` directory provided containing predefined *Run/Debug
+configurations* that expose corresponding Gradle tasks:
+
+| Configuration name | Description                                                                                                                                                                         |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Run Plugin         | Runs [`:runIde`][gh:intellij-platform-gradle-plugin-runIde] IntelliJ Platform Gradle Plugin task. Use the *Debug* icon for plugin debugging.                                        |
+| Run Tests          | Runs [`:test`][gradle:lifecycle-tasks] Gradle task.                                                                                                                                 |
+| Run Verifications  | Runs [`:verifyPlugin`][gh:intellij-platform-gradle-plugin-verifyPlugin] IntelliJ Platform Gradle Plugin task to check the plugin compatibility against the specified IntelliJ IDEs. |
+
+> [!NOTE]
+> You can find the logs from the running task in the `idea.log` tab.
+
+## Publishing the plugin
+
+> [!TIP]
+> Make sure to follow all guidelines listed in [Publishing a Plugin][docs:publishing] to follow all recommended and
+> required steps.
+
+Releasing a plugin to [JetBrains Marketplace](https://plugins.jetbrains.com) is a straightforward operation that uses
+the `publishPlugin` Gradle task provided by
+the [intellij-platform-gradle-plugin][gh:intellij-platform-gradle-plugin-docs].
+
+You can also upload the plugin to the [JetBrains Plugin Repository](https://plugins.jetbrains.com/plugin/upload)
+manually via UI.
+
+## Useful links
+
+- [IntelliJ Platform SDK Plugin SDK][docs]
+- [IntelliJ Platform Gradle Plugin Documentation][gh:intellij-platform-gradle-plugin-docs]
+- [IntelliJ Platform Explorer][jb:ipe]
+- [JetBrains Marketplace Quality Guidelines][jb:quality-guidelines]
+- [IntelliJ Platform UI Guidelines][jb:ui-guidelines]
+- [JetBrains Marketplace Paid Plugins][jb:paid-plugins]
+- [IntelliJ SDK Code Samples][gh:code-samples]
+
+[docs]: https://plugins.jetbrains.com/docs/intellij
+
+[docs:intro]: https://plugins.jetbrains.com/docs/intellij/intellij-platform.html?from=IJPluginTemplate
+
+[docs:plugin.xml]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html?from=IJPluginTemplate
+
+[docs:publishing]: https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate
+
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
+
+[gh:code-samples]: https://github.com/JetBrains/intellij-sdk-code-samples
+
+[gh:intellij-platform-gradle-plugin]: https://github.com/JetBrains/intellij-platform-gradle-plugin
+
+[gh:intellij-platform-gradle-plugin-docs]: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
+
+[gh:intellij-platform-gradle-plugin-runIde]: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-tasks.html#runIde
+
+[gh:intellij-platform-gradle-plugin-verifyPlugin]: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-tasks.html#verifyPlugin
+
+[gradle:lifecycle-tasks]: https://docs.gradle.org/current/userguide/java_plugin.html#lifecycle_tasks
+
+[jb:github]: https://github.com/JetBrains/.github/blob/main/profile/README.md
+
+[jb:forum]: https://platform.jetbrains.com/
+
+[jb:quality-guidelines]: https://plugins.jetbrains.com/docs/marketplace/quality-guidelines.html
+
+[jb:paid-plugins]: https://plugins.jetbrains.com/docs/marketplace/paid-plugins-marketplace.html
+
+[jb:quality-guidelines]: https://plugins.jetbrains.com/docs/marketplace/quality-guidelines.html
+
+[jb:ipe]: https://jb.gg/ipe
+
+[jb:ui-guidelines]: https://jetbrains.github.io/ui
