@@ -10,6 +10,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class PanelLogic extends JBPanel<PanelLogic> {
+    private static final int RIGHT = 1;
+    private static final int LEFT = 2;
+    private static final int UP = 3;
+    private static final int DOWN = 4;
+
     private int pacX = 13;
     private int pacY = 7;
 
@@ -91,6 +96,8 @@ public class PanelLogic extends JBPanel<PanelLogic> {
                 gameMap[nextY][nextX]!=1;
     }*/
     private void movePAcMAn(){
+        if(isGameOver) return;
+
         if(camMove(pacX, pacY, dx, dy)) {
             pacX += dx;
             pacY += dy;
@@ -103,13 +110,6 @@ public class PanelLogic extends JBPanel<PanelLogic> {
 
         }
     }
-
-    /*private void moveGhosts() {
-
-        moveGhostRandomly(1);
-        moveGhostRandomly(2);
-
-    }*/
 
     private void moveGhostRandomly(int ghost) {
 
@@ -171,14 +171,17 @@ public class PanelLogic extends JBPanel<PanelLogic> {
         int[] dxs = {1,-1,0,0};
         int[] dys = {0,0,1,-1};
 
-        int r = (int)(Math.random()*4);
+        while(true) {
+            int r = (int) (Math.random() * 4);
 
-        int dx = dxs[r];
-        int dy = dys[r];
+            int dx = dxs[r];
+            int dy = dys[r];
 
-        if (camMove(ghost1X, ghost1Y, dx, dy)) {
-            ghost1X += dx;
-            ghost1Y += dy;
+            if (camMove(ghost1X, ghost1Y, dx, dy)) {
+                ghost1X += dx;
+                ghost1Y += dy;
+                break;
+            }
         }
     }
     private void moveBlueGhost() {
@@ -186,14 +189,17 @@ public class PanelLogic extends JBPanel<PanelLogic> {
         int[] dxs = {1,-1,0,0};
         int[] dys = {0,0,1,-1};
 
-        int r = (int)(Math.random()*4);
+        while(true) {
+            int r = (int)(Math.random()*4);
 
-        int dx = dxs[r];
-        int dy = dys[r];
+            int dx = dxs[r];
+            int dy = dys[r];
 
-        if (camMove(ghost2X, ghost2Y, dx, dy)) {
-            ghost2X += dx;
-            ghost2Y += dy;
+            if (camMove(ghost2X, ghost2Y, dx, dy)) {
+                ghost2X += dx;
+                ghost2Y += dy;
+                break;
+            }
         }
     }
 
