@@ -15,7 +15,7 @@ public class WindowFAc implements ToolWindowFactory {
         JPanel mainWrapper = new JPanel(new BorderLayout());
 
         PanelLogic gamePanel = new PanelLogic();
-
+        Sounds.playMusic();
         JButton restartButton = new JButton("Restart Game");
 
         restartButton.setFocusable(false);

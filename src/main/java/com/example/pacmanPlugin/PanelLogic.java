@@ -15,6 +15,9 @@ public class PanelLogic extends JBPanel<PanelLogic> {
     private static final int UP = 3;
     private static final int DOWN = 4;
 
+    private boolean winSoundPlayed = false;
+    private boolean loseSoundPlayed = false;
+
     private int pacX = 13;
     private int pacY = 7;
 
@@ -85,16 +88,6 @@ public class PanelLogic extends JBPanel<PanelLogic> {
         timer.start();
     }
 
-    /*private boolean camMove(int nextDx, int nextDy){
-        int nextX=pacX+nextDx;
-        int nextY=pacY+nextDy;
-
-        return nextY>=0 &&
-                nextY<gameMap.length &&
-                nextX>=0 &&
-                nextX< gameMap[0].length &&
-                gameMap[nextY][nextX]!=1;
-    }*/
     private void movePAcMAn(){
         if(isGameOver) return;
 
@@ -105,6 +98,7 @@ public class PanelLogic extends JBPanel<PanelLogic> {
             if(gameMap[pacY][pacX]==0){
                 gameMap[pacY][pacX]=2;
                 dotsLeft--;
+                Sounds.playCoin();
                 if(dotsLeft<=0)isWon=true;
             }
 
@@ -147,10 +141,12 @@ public class PanelLogic extends JBPanel<PanelLogic> {
 
         if(pacX == ghost1X && pacY == ghost1Y){
             isGameOver = true;
+
         }
 
         if(pacX == ghost2X && pacY == ghost2Y){
             isGameOver = true;
+
         }
 
     }
@@ -235,12 +231,21 @@ public class PanelLogic extends JBPanel<PanelLogic> {
         G2.drawImage(BlueGhost.getImage(), ghost2X*Map.CellSize,ghost2Y*Map.CellSize, Map.CellSize, Map.CellSize, this);
 
         if(isWon){
+            if(!winSoundPlayed){
+                Sounds.playWin();
+                winSoundPlayed = true;
+            }
+
             G2.setColor(Color.YELLOW);
             G2.setFont(new Font("Monospaced",Font.BOLD,40));
             G2.drawString("You Win!",100,110);
         }
 
         if(isGameOver){
+            if(!loseSoundPlayed){
+                Sounds.playLose();
+                loseSoundPlayed = true;
+            }
             G2.setColor(Color.RED);
             G2.setFont(new Font("Monospaced",Font.BOLD,40));
             G2.drawString("Game Over",85,110);
@@ -258,6 +263,9 @@ public class PanelLogic extends JBPanel<PanelLogic> {
         ghost1Y = 5;
         ghost2X = 10;
         ghost2Y = 5;
+
+        winSoundPlayed = false;
+        loseSoundPlayed = false;
 
         isGameOver = false;
         isWon = false;
