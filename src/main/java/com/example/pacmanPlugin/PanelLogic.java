@@ -248,4 +248,31 @@ public class PanelLogic extends JBPanel<PanelLogic> {
 
     }
 
+    public void restartGame() {
+        pacX = 13;
+        pacY = 7;
+        dx = 0;
+        dy = 0;
+
+        ghost1X = 9;
+        ghost1Y = 5;
+        ghost2X = 10;
+        ghost2Y = 5;
+
+        isGameOver = false;
+        isWon = false;
+        currentPacman = Icons.PacRight;
+
+        dotsLeft = 0;
+        for (int i = 0; i < Map.MaP.length; i++) {
+            for (int j = 0; j < Map.MaP[i].length; j++) {
+                gameMap[i][j] = Map.MaP[i][j];
+                if (gameMap[i][j] == 0) dotsLeft++;
+            }
+        }
+
+        repaint();
+        requestFocusInWindow();
+    }
+
     }
