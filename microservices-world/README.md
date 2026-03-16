@@ -416,7 +416,7 @@ public StationsApi stationsApi(@Value("${TRAIN_TRIP_MANAGER_SERVICE}") String ba
 TRAIN_TRIP_MANAGER_SERVICE: http://localhost:8081
 ```
 
-#### Obsługa "wyjątku" rzuconego przez API
+* Obsługa "wyjątku" rzuconego przez API:
 ```java
 @Bean
 public CommandLineRunner commandLineRunner(StationsApi stationsApi, BookingsApi bookingsApi) {
@@ -454,12 +454,12 @@ a system staje się bardziej elastyczny i odporny na awarie. Każdy mikroserwis 
 3. [Róźne propozycje architektur](img/arch-styles.png)
 4. [Kluczowe zasady mikroserwisów](https://12factor.net/)
 
-### Spring Cloud
+## Spring Cloud
 Spring Cloud to zestaw narzędzi i bibliotek, które rozwiązują typowe problemy pojawiające się w architekturze mikroserwisowej. 
 Możesz myśleć o nim jak o „platformie wsparcia” dla Spring Boot, która dodaje funkcje potrzebne, gdy aplikacja składa się z wielu 
 niezależnych usług.
 
-#### 🌩️ Co dokładnie daje Spring Cloud w mikroserwisach?
+### 🌩️ Co dokładnie daje Spring Cloud w mikroserwisach?
 - Rejestracja i odkrywanie usług – np. Eureka, dzięki której mikroserwisy mogą się odnajdywać bez twardych adresów.
 - Zarządzanie konfiguracją – Spring Cloud Config pozwala trzymać konfigurację w jednym miejscu (np. Git) i aktualizować ją bez restartu.
 - Komunikacja między usługami – Feign, LoadBalancer, Gateway ułatwiają wywoływanie innych mikroserwisów i równoważenie ruchu.
@@ -467,12 +467,12 @@ niezależnych usług.
 - Odporność i stabilność – mechanizmy retry, circuit breaker, timeouts, rate limiting.
 - Integracja zdarzeniowa – Spring Cloud Stream do komunikacji przez brokery (Kafka, RabbitMQ).
 
-#### 🧩 W skrócie
+### 🧩 W skrócie
 Spring Cloud to „system operacyjny” dla mikroserwisów w Springu — dostarcza wszystkie brakujące elementy, które sprawiają, 
 że wiele małych usług może działać jak jeden spójny system.
 - https://spring.io/projects/spring-cloud
 
-## Eureka Server
+### Eureka Discovery Server
 Eureka to serwer rejestracji usług, który pozwala mikroserwisom automatycznie odnajdywać się w systemie bez ręcznego wpisywania adresów. 
 Każdy mikroserwis rejestruje się w Eurece i regularnie wysyła „heartbeat”, dzięki czemu Eureka wie, które instancje są dostępne. 
 Dzięki temu komunikacja między usługami jest dynamiczna, odporna na zmiany i nie wymaga twardych adresów ani konfiguracji sieciowej.
@@ -507,7 +507,6 @@ server:
   port: 8761
 ```
 * Enter URL: `http://localhost:8761/`
-
 
 ### Register both, newly created services
 
@@ -550,9 +549,9 @@ eureka:
 
 
 ### Spring Cloud Client Load balancer
-1. [Load balancer - grafika](img/load-balancer.jpg)
-1. Stop running `TrainTripsManager` and comment `server.port` properties
-1. Add `TestController`:
+* [Load balancer - grafika](img/load-balancer.jpg)
+* Stop running `TrainTripsManager` and comment `server.port` properties
+* Add `TestController`:
    ```java
     @RestController
     class TestController {
@@ -569,19 +568,19 @@ eureka:
         }
     }
    ```
-1. Run two (or more) instances using Spring Boot Run Configuration, use Environment > VM Options for setting ports:
+* Run two (or more) instances using Spring Boot Run Configuration, use Environment > VM Options for setting ports:
   * `-Dserver.port=8021`
   * `-Dserver.port=8022`
   * `-Dserver.port=8023`
-1. Refresh Eureka Discovery page and determine if both instances of the same service are available
-1. Add load balancer dependency in `TrainTripsOrganizerService` project
+* Refresh Eureka Discovery page and determine if both instances of the same service are available
+* Add load balancer dependency in `TrainTripsOrganizerService` project
    ```xml
    <dependency>
        <groupId>org.springframework.cloud</groupId>
        <artifactId>spring-cloud-starter-loadbalancer</artifactId>
    </dependency>
    ```
-1. `TrainTripsManagerSupplier` implementation:
+* `TrainTripsManagerSupplier` implementation:
 > `ServiceInstanceListSupplier` to interfejs, który dostarcza listę instancji usług dla danego identyfikatora usługi. W tym przypadku `TrainTripsManagerSupplier` implementuje ten interfejs, zwracając listę trzech instancji usługi `train-trips-service`, każda z nich działa na innym porcie (8021, 8022, 8023). Dzięki temu, gdy `TrainTripsOrganizerService` będzie chciał wywołać `train-trips-service`, będzie mógł skorzystać z tej listy instancji i równoważyć obciążenie między nimi.
 
 ```java
@@ -612,7 +611,7 @@ public ServiceInstanceListSupplier serviceInstanceListSupplier() {
     };
 }
 ```   
-1. Create `restTemplate` bean with `@LoadBalanced` annotation, which will allow us to use logical service names instead of hardcoded URLs when making requests to other services.:
+* Create `restTemplate` bean with `@LoadBalanced` annotation, which will allow us to use logical service names instead of hardcoded URLs when making requests to other services.:
    ```java
     @Bean
     @LoadBalanced
@@ -620,7 +619,7 @@ public ServiceInstanceListSupplier serviceInstanceListSupplier() {
         return new RestTemplate();
     }
    ```
-1. Oraz "bean" z command line runnerem i ADRESEM DO KTÓREGO UDERZAMY, KTÓRY JEST LOGICZNYM NAZWĄ USŁUGI, NIE KONKRETNYM URL-em (dzięki load balancerowi):
+* Oraz "bean" z command line runnerem i ADRESEM DO KTÓREGO UDERZAMY, KTÓRY JEST LOGICZNYM NAZWĄ USŁUGI, NIE KONKRETNYM URL-em (dzięki load balancerowi):
 ```java
 @Bean
 public CommandLineRunner commandLineRunner(RestTemplate restTemplate) {
@@ -642,7 +641,7 @@ public CommandLineRunner commandLineRunner(RestTemplate restTemplate) {
     };
 }
 ```
-1. Wykonaj symulację awarii jednej z instancji `TrainTripsManager` (np. zatrzymaj jedną z nich) i pokaż, że komunikacja nadal działa, ale dostajemy błąd gdy uderza do instancji serwisu która padła, uzupełnij impplementację
+* Wykonaj symulację awarii jednej z instancji `TrainTripsManager` (np. zatrzymaj jedną z nich) i pokaż, że komunikacja nadal działa, ale dostajemy błąd gdy uderza do instancji serwisu która padła, uzupełnij impplementację
 ```java
             @Override
             public Flux<List<ServiceInstance>> get() {
@@ -669,12 +668,12 @@ public CommandLineRunner commandLineRunner(RestTemplate restTemplate) {
             }
 ```
 
-## Config Server
+### Config Server
 
 > Config Server w Spring Cloud to centralne miejsce przechowywania konfiguracji dla wszystkich mikroserwisów, dzięki czemu każdy z nich pobiera ustawienia z jednego, spójnego źródła. Najczęściej trzyma konfigurację w repozytorium Git, co pozwala na wersjonowanie i łatwe zarządzanie zmianami. Serwisy klienckie pobierają konfigurację przy starcie lub dynamicznie, co eliminuje konieczność trzymania plików YAML w każdym mikroserwisie. W efekcie masz jedno źródło prawdy i pełną kontrolę nad konfiguracją całego systemu.
 
-1. Open [Spring Initializr website](https://start.spring.io/)
-1. Complete Metadata section: set Artifact name as `TrainTripsConfigServer`
+* Open [Spring Initializr website](https://start.spring.io/)
+* Complete Metadata section: set Artifact name as `TrainTripsConfigServer`
     * Project: Maven
     * Language: Java
     * Spring Boot: 3.5.11
@@ -686,10 +685,10 @@ public CommandLineRunner commandLineRunner(RestTemplate restTemplate) {
     * Packaging: Jar
     * Java: 21
     * Dependencies: Spring Web, Eureka Discovery Client, Config Server
-1. Click Generate button, download and unzip package
-1. Copy unzipped `TrainTripsConfigServer` folder into your project folder
-1. DODAJ ADNOTACJE: `@EnableDiscoveryClient` & `@EnableConfigServer` into main class
-1. Add some properties into `application.yml`
+* Click Generate button, download and unzip package
+* Copy unzipped `TrainTripsConfigServer` folder into your project folder
+* PAMIĘTAJ O DODANIU ADNOTACJI: `@EnableDiscoveryClient` & `@EnableConfigServer` do main klasy
+* Add some properties into `application.yml`
 ```yaml
 spring:
   application:
@@ -709,15 +708,15 @@ eureka:
 server:
   port: 8040
  ```
-1. Show Github repo in IntelliJ or browser: https://github.com/zzpj/demo-config-server.git
-1. Complete `pom.xml` of `TrainTripsOrganizerService`
+* Show Github repo in IntelliJ or browser: https://github.com/zzpj/demo-config-server.git
+* Complete `pom.xml` of `TrainTripsOrganizerService`
    ```xml
    <dependency>
        <groupId>org.springframework.cloud</groupId>
        <artifactId>spring-cloud-starter-config</artifactId>
    </dependency>
    ```
-1. Go to `application.yml` files and add:
+* Go to `application.yml` files and add:
     ```yml
     spring:
       application:
@@ -734,7 +733,7 @@ server:
           label: main
           fail-fast: true
     ```
-1. Add properties check with use of `@Value` annotation
+* Add properties check with use of `@Value` annotation
    ```java
     @Value("${config.server.demo}")
     private String message;
@@ -749,7 +748,7 @@ server:
         };
     }
    ```
-1. Remember about following properties naming rules
+* Remember about following properties naming rules
    ```
    /{application}/{profile}[/{label}]
    /{application}-{profile}.yml
@@ -758,15 +757,16 @@ server:
    /{label}/{application}-{profile}.properties
    ```
 
-
-## Vault Server
+## Następne zajęcia (za dwa tygodnie?):
+### Vault Server
 > Vault Server to narzędzie do bezpiecznego przechowywania i zarządzania tajemnicami, takimi jak hasła, klucze API czy certyfikaty. W architekturze mikroserwisowej pozwala na centralne zarządzanie sekretami, eliminując potrzebę trzymania wrażliwych danych w kodzie lub plikach konfiguracyjnych. Mikroserwisy mogą dynamicznie pobierać potrzebne sekrety z Vaulta podczas uruchamiania lub w trakcie działania, co zwiększa bezpieczeństwo i ułatwia rotację kluczy.
 
-1. Pobierz i uruchom lokalnie Vault Server https://developer.hashicorp.com/vault/install#linux
-2. Rozpakuj binarkę AMD64 i uruchom `./vault --version` oraz `./vault server -dev`
-
-## API Gateway
+### API Gateway
 > API Gateway to lekka warstwa pośrednia, która przyjmuje wszystkie żądania z zewnątrz i przekazuje je do odpowiednich mikroserwisów według zdefiniowanych reguł routingu. Umożliwia centralne dodawanie funkcji takich jak autoryzacja, logowanie, rate limiting czy load balancing, dzięki czemu mikroserwisy pozostają proste i odciążone od logiki brzegowej. W praktyce działa jako „jedno wejście do systemu”, które kontroluje i porządkuje cały ruch.
 
-## Spring Security + Keycloak + Spring Authorization Server
-[next class: secure your microservices and authorize your users](README2.md)
+### Spring Security 
+> Spring Security to komponent do zabezpieczania aplikacji Java, który oferuje kompleksowe rozwiązania do uwierzytelniania i autoryzacji. W kontekście mikroserwisów, Spring Security pozwala na implementację różnych mechanizmów zabezpieczeń, takich jak JWT, OAuth2 czy integracja z zewnętrznymi dostawcami tożsamości (np. Keycloak). Dzięki temu można skutecznie chronić swoje usługi, kontrolować dostęp do zasobów i zarządzać uprawnieniami użytkowników w całym systemie.
+
+## Narzędzia wspomagające bezpieczeństwo mikroserwisów:
+* Keycloak 
+* Spring Authorization Server
