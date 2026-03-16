@@ -767,6 +767,6 @@ server:
 ### Spring Security 
 > Spring Security to komponent do zabezpieczania aplikacji Java, który oferuje kompleksowe rozwiązania do uwierzytelniania i autoryzacji. W kontekście mikroserwisów, Spring Security pozwala na implementację różnych mechanizmów zabezpieczeń, takich jak JWT, OAuth2 czy integracja z zewnętrznymi dostawcami tożsamości (np. Keycloak). Dzięki temu można skutecznie chronić swoje usługi, kontrolować dostęp do zasobów i zarządzać uprawnieniami użytkowników w całym systemie.
 
-## Narzędzia wspomagające bezpieczeństwo mikroserwisów:
+### Narzędzia wspomagające bezpieczeństwo mikroserwisów:
 * Keycloak 
 * Spring Authorization Server
