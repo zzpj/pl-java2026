@@ -13,3 +13,7 @@
 /copilot.data.migration.edit.xml
 /copilot.data.migration.ask.xml
 /copilot.data.migration.agent.xml
+/compiler.xml
+/copilot.data.migration.ask2agent.xml
+/discord.xml
+/copilotDiffState.xml
