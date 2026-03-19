@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: OpenApiDemo
+
+server:
+  port: 8079
+
+springdoc:
+  swagger-ui:
+    url=: /openapi.yaml

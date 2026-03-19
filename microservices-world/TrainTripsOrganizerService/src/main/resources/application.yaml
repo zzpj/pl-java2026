@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: TrainTripsOrganizerService
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: TrainTripsConfigServer
+      name: train-trips-organizer-service
+      profile: dev
+      label: main
+      fail-fast: true
+
+
+
+server:
+  port: 8090
+
+TRAIN_TRIP_MANAGER_SERVICE: http://localhost:8020
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
