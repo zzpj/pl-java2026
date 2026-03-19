@@ -59,7 +59,7 @@
 | 1  | 2.03  | Wprowadzenie + IntelliJ                                                                          | [Materiały na zajęcia](https://github.com/zzpj/pl-java2026/tree/main/intro-intellij) |
 | 2  | 9.03  | Spring: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA                             |                                                                                      |
 | 3  | 16.03 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka | [Scenariusz zajęć](microservices-world/README.md)                                    |
-| 4  | 23.03 | Przedstawienie pomysłu na projekt                                                                |                                                                                      |
+| 4  | 23.03 | Przedstawienie pomysłu na projekt                                                                | [Link do zapisów wkrótce]                                                            |
 | 5  | 30.03 |                                                                                                  |                                                                                      |
 | 6  | 13.04 |                                                                                                  |                                                                                      |
 | 7  | 20.04 |                                                                                                  |                                                                                      |
@@ -81,7 +81,7 @@
 
 ## Youtube
 
-- [Nagrania z zajęć 2026](https://to-be-defined-xyz)
+- [Nagrania z zajęć 2026](https://www.youtube.com/playlist?list=PLIPonSYREXmKl1PJNoFpZthn5HsS5p1fd)
 - [Nagrania z zajęć 2025](https://www.youtube.com/playlist?list=PLIPonSYREXmIEPZtRujsooBwAPBSsxROs)
 - [Nagrania z zajęć 2024](https://www.youtube.com/playlist?list=PLIPonSYREXmIQN-S_9i0mrTyAK5u0gA8t)
 - [Nagrania z zajęć 2023](https://www.youtube.com/playlist?list=PLIPonSYREXmKVCktLuj_Duve4tQNEA3p1)
