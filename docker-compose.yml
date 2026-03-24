@@ -120,11 +120,6 @@ services:
       - -lc
       - >
         gradle --no-daemon
-        :auth-server:classes
-        :config-server:classes
-        :eureka-server:classes
-        :watermark-service:classes
-        :watermark-client:classes
         :auth-server:sonar
         :config-server:sonar
         :eureka-server:sonar
