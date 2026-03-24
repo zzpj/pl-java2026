@@ -125,6 +125,16 @@ services:
         :eureka-server:classes
         :watermark-service:classes
         :watermark-client:classes
+        :auth-server:test
+        :config-server:test
+        :eureka-server:test
+        :watermark-service:test
+        :watermark-client:test
+        :auth-server:jacocoTestReport
+        :config-server:jacocoTestReport
+        :eureka-server:jacocoTestReport
+        :watermark-service:jacocoTestReport
+        :watermark-client:jacocoTestReport
         :auth-server:sonar
         :config-server:sonar
         :eureka-server:sonar
