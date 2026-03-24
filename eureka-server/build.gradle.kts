@@ -50,6 +50,10 @@ tasks.jacocoTestReport {
 
 sonar {
 	properties {
-		property("sonar.coverage.jacoco.xmlReportPaths", layout.buildDirectory.file("reports/jacoco/test/jacocoTestReport.xml").get().asFile.absolutePath)
+		property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml")
 	}
+}
+
+tasks.named("sonar") {
+	dependsOn(tasks.jacocoTestReport)
 }
