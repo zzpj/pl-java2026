@@ -1,4 +1,17 @@
 services:
+  postgres-db:
+    image: postgres:17
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_db_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
   config-server:
     build:
       context: .
@@ -11,6 +24,11 @@ services:
       JAVA_TOOL_OPTIONS: -Dgit.timeout=30000
     ports:
       - "8888:8888"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8888/auth-server/default" ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
     restart: unless-stopped
 
   eureka-server:
@@ -19,14 +37,15 @@ services:
       dockerfile: eureka-server/Dockerfile
     container_name: eureka-server
     environment:
-      SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888
+      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
       SERVER_PORT: 8761
       EUREKA_CLIENT_REGISTERWITHEUREKA: "false"
       EUREKA_CLIENT_FETCHREGISTRY: "false"
     ports:
       - "8761:8761"
     depends_on:
-      - config-server
+      config-server:
+        condition: service_healthy
     restart: unless-stopped
 
   auth-server:
@@ -35,14 +54,22 @@ services:
       dockerfile: auth-server/Dockerfile
     container_name: auth-server
     environment:
-      SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888
-      JAVA_TOOL_OPTIONS: -Deureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
-      SERVER_PORT: 8081
+      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      EUREKA_URL: http://eureka-server:8761/eureka/
+      JAVA_TOOL_OPTIONS: -Dspring.profiles.active=default
     ports:
       - "8081:8081"
     depends_on:
-      - config-server
-      - eureka-server
+      config-server:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+      postgres-db:
+        condition: service_started
     restart: unless-stopped
 
   watermark-service:
@@ -51,14 +78,15 @@ services:
       dockerfile: watermark-service/Dockerfile
     container_name: watermark-service
     environment:
-      SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888
-      JAVA_TOOL_OPTIONS: -Deureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
-      SERVER_PORT: 8082
+      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+      EUREKA_URL: http://eureka-server:8761/eureka/
     ports:
       - "8082:8082"
     depends_on:
-      - config-server
-      - eureka-server
+      config-server:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
     restart: unless-stopped
 
   watermark-client:
@@ -67,16 +95,19 @@ services:
       dockerfile: watermark-client/Dockerfile
     container_name: watermark-client
     environment:
-      SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888
-      JAVA_TOOL_OPTIONS: -Deureka.client.service-url.defaultZone=http://eureka-server:8761/eureka/
-      SERVER_PORT: 8083
+      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+      EUREKA_URL: http://eureka-server:8761/eureka/
     ports:
       - "8083:8083"
     depends_on:
-      - config-server
-      - eureka-server
-      - watermark-service
-      - auth-server
+      config-server:
+        condition: service_healthy
+      eureka-server:
+        condition: service_started
+      watermark-service:
+        condition: service_started
+      auth-server:
+        condition: service_started
     restart: unless-stopped
 
   sonarqube-db:
@@ -139,4 +170,5 @@ volumes:
   sonarqube_extensions:
   sonarqube_logs:
   gradle_cache:
+  postgres_db_data:
 

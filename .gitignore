@@ -240,3 +240,5 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,windows,java,gradle,intellij,visualstudiocode,netbeans
+/.idea/dataSources.xml
+/.idea/sqldialects.xml
