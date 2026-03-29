@@ -74,9 +74,9 @@
 
 ## Ankiety
 
-- [Ankieta Wejściowa: Oczekiwania](https://forms.gle/3VvpUs9ntmiUmmBB7 ) - wypełnij teraz, abyśmy mogli lepiej
+- [Ankieta Wejściowa: Oczekiwania](https://forms.gle/3VvpUs9ntmiUmmBB7 ) — wypełnij teraz, abyśmy mogli lepiej
   dostosować zajęcia do Twoich potrzeb i oczekiwań!
-- [Ankieta Wyjściowa: Ocena zajęć i wnioski](https://to-be-defined-abc) - wypełnij po zakończeniu zajęć, aby podzielić
+- [Ankieta Wyjściowa: Ocena zajęć i wnioski](https://to-be-defined-abc) — wypełnij po zakończeniu zajęć, aby podzielić
   się swoimi doświadczeniami i pomóc nam w przyszłości!
 
 ## Youtube

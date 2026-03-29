@@ -1131,21 +1131,14 @@ W logach zobaczysz:
 Root Token: s.xxxxxxxx
 ```
 
-Zapisz go — to Twój token administracyjny.
-
-### Konfiguracja CLI (jednorazowo)
-
-W nowym terminalu:
-
-```bash
-export VAULT_ADDR=http://127.0.0.1:8200
-export VAULT_TOKEN=s.xxxxxxxx
-```
-
+- Zapisz go — to Twój token administracyjny.
+- Pamiętaj: konfiguracja w CLI jest jednorazowo
 
 ### Włączenie silnika sekretów (KV)
 
 Vault domyślnie ma włączony KV v2 pod ścieżką `secret/`. Przejdź do lokalizacji gdzie `Vault` jest zainstalowany i sprawdź, czy silnik jest aktywny:
+
+W nowym terminalu:
 
 ```bash
 ./vault secrets list
@@ -1195,7 +1188,7 @@ spring:
     import: optional:vault://
   cloud:
     vault:
-      uri: http://127.0.0.1:8200
+      uri: ${VAULT_ADDR:}
       token: ${VAULT_TOKEN:}
       kv:
         enabled: true
@@ -1205,6 +1198,10 @@ spring:
 server:
   port: 8082
 ```
+
+W Run Configuration dodaj zmienne środowiskowe:
+- `VAULT_ADDR=http://localhost:8200`
+- `VAULT_TOKEN=s.xxxxxxxx` (Twój token z logów Vaulta)
 
 Aplikacja automatycznie pobierze sekret:
 
@@ -1227,9 +1224,18 @@ To w Springu możesz użyć:
 String password;
 ```
 
-W uzupełnieniu: Główny root klucz do Vaulta zamiast w "token:" trzymać np w pliku .env albo środowisku uruchomieniowym dla Intellij
+Przetestuj poprzez wyświetlenie hasła w `CommandLineRunner`:
 
+```java
+@Bean
+CommandLineRunner commandLineRunner(Environment environment) {
+    return args -> {
+        
+        System.out.println("Moje hasło to: " + password);
 
+    };
+}
+```
 
 ### 8. Podsumowanie
 
@@ -1237,7 +1243,6 @@ W uzupełnieniu: Główny root klucz do Vaulta zamiast w "token:" trzymać np w 
 - brak sekretów w `application.yaml`
 - dynamiczne pobieranie sekretów
 - możliwość rotacji sekretów bez restartu aplikacji
-- bezpieczeństwo: tokeny, polityki, role
 
 ---
 EOF.
