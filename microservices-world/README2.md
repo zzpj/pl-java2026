@@ -1108,7 +1108,7 @@ Vault to narzędzie do **bezpiecznego przechowywania sekretów**, takich jak:
 - tokeny.
 
 
-### **Windows / Linux / macOS — najprostsza metoda: pobranie binarki**
+### 1. Windows / Linux / macOS — najprostsza metoda: pobranie binarki
 
 Wejdź na stronę pobierania Vault: [HashiCorp Developer](https://developer.hashicorp.com/vault/install)
 
@@ -1119,7 +1119,7 @@ Pobierz wersję dla swojego systemu:
 
 Uruchomienie Vault w trybie developerskim nie wymaga konfiguracji i przechowuje dane w pamięci.
 
-### Uruchomianie:
+### 2. Uruchomianie:
 
 ```bash
 vault server -dev
@@ -1134,7 +1134,7 @@ Root Token: s.xxxxxxxx
 - Zapisz go — to Twój token administracyjny.
 - Pamiętaj: konfiguracja w CLI jest jednorazowo
 
-### Włączenie silnika sekretów (KV)
+### 3. Włączenie silnika sekretów (KV)
 
 Vault domyślnie ma włączony KV v2 pod ścieżką `secret/`. Przejdź do lokalizacji gdzie `Vault` jest zainstalowany i sprawdź, czy silnik jest aktywny:
 
@@ -1145,7 +1145,7 @@ W nowym terminalu:
 ```
 
 
-### 5. Zapis sekretu
+### 4. Zapis sekretu
 
 Przykład: zapisujemy hasło do bazy:
 
@@ -1153,7 +1153,7 @@ Przykład: zapisujemy hasło do bazy:
 ./vault kv put secret/db password="SuperTajneHaslo123"
 ```
 
-### 6. Odczyt sekretu
+### 5. Odczyt sekretu
 
 ```bash
 ./vault kv get secret/db
@@ -1167,7 +1167,7 @@ password: SuperTajneHaslo123
 ```
 
 
-### 7. Użycie Vault w aplikacji (Spring Boot)
+### 6. Użycie Vault w aplikacji (Spring Boot)
 
 Dodaj zależność:
 
@@ -1237,7 +1237,7 @@ CommandLineRunner commandLineRunner(Environment environment) {
 }
 ```
 
-### 8. Podsumowanie
+### 7. Podsumowanie
 
 - Vault jako **centralne miejsce na sekrety**
 - brak sekretów w `application.yaml`
