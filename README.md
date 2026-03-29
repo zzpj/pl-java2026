@@ -54,23 +54,23 @@
 
 ## Ramowy plan zajęć
 
-| Lp | Data  | Temat                                                                                            | Uwagi                                                                                |
-|----|-------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| 1  | 2.03  | Wprowadzenie + IntelliJ                                                                          | [Materiały na zajęcia](https://github.com/zzpj/pl-java2026/tree/main/intro-intellij) |
-| 2  | 9.03  | Spring: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA                             |                                                                                      |
-| 3  | 16.03 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka | [Scenariusz zajęć](microservices-world/README.md)                                    |
-| 4  | 23.03 | Przedstawienie pomysłu na projekt                                                                | [Link do zapisów wkrótce]                                                            |
-| 5  | 30.03 |                                                                                                  |                                                                                      |
-| 6  | 13.04 |                                                                                                  |                                                                                      |
-| 7  | 20.04 |                                                                                                  |                                                                                      |
-| 8  | 4.05  |                                                                                                  |                                                                                      |
-| 9  | 11.05 |                                                                                                  |                                                                                      |
-| 10 | 18.05 |                                                                                                  |                                                                                      |
-| 11 | 25.05 | Sprawdzanie postępu realizacji projektu                                                          |                                                                                      |
-| 12 | 1.06  |                                                                                                  |                                                                                      |
-| 13 | 8.06  |                                                                                                  |                                                                                      |
-| 14 | 15.06 |                                                                                                  |                                                                                      |
-| 15 | 22.06 | Finalne przedstawienie zrealizowanego projektu                                                   |                                                                                      |
+| Lp | Data  | Temat                                                                                                                                  | Uwagi                                                                                |
+|----|-------|----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| 1  | 2.03  | Wprowadzenie + IntelliJ                                                                                                                | [Materiały na zajęcia](https://github.com/zzpj/pl-java2026/tree/main/intro-intellij) |
+| 2  | 9.03  | Spring: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA                                                                   |                                                                                      |
+| 3  | 16.03 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka                                       | [Scenariusz zajęć](microservices-world/README.md)                                    |
+| 4  | 23.03 | Przedstawienie pomysłu na projekt                                                                                                      | [Link do zapisów -> kanał Teams]                                                     |
+| 5  | 30.03 | Mikroserwisy 102 (+ Spring Security): zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją | [Scenariusz zajęć](microservices-world/README2.md)                                   |
+| 6  | 13.04 |                                                                                                                                        |                                                                                      |
+| 7  | 20.04 |                                                                                                                                        |                                                                                      |
+| 8  | 4.05  |                                                                                                                                        |                                                                                      |
+| 9  | 11.05 |                                                                                                                                        |                                                                                      |
+| 10 | 18.05 |                                                                                                                                        |                                                                                      |
+| 11 | 25.05 | Sprawdzanie postępu realizacji projektu                                                                                                |                                                                                      |
+| 12 | 1.06  |                                                                                                                                        |                                                                                      |
+| 13 | 8.06  |                                                                                                                                        |                                                                                      |
+| 14 | 15.06 |                                                                                                                                        |                                                                                      |
+| 15 | 22.06 | Finalne przedstawienie zrealizowanego projektu                                                                                         |                                                                                      |
 
 ## Ankiety
 
