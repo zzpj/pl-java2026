@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: TrainTripsUserServiceJWT
-
-
-server:
-  port: 8051
